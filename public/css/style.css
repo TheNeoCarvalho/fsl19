@@ -1,0 +1,38 @@
+body {
+  box-sizing: content-box;
+  font-family: Montserrat, "sans-serif";
+}
+
+.container {
+  padding: 50px
+}
+
+.blockquote-footer {
+  font-size: 22px
+}
+
+.blockquote span {
+  font-size: 14px;
+
+}
+
+.blockquote p {
+  font-weight: 700;
+}
+
+.title {
+  font-size: 32px;
+
+}
+
+.footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  padding-bottom: 10px
+}
+
+h4 span a {
+  font-size: 18px
+}

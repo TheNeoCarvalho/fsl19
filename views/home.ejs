@@ -1,0 +1,21 @@
+<%- include('header')%>
+
+<div class="container">
+  <p class="lead display-4">Vagas</p>
+  <% categorias.forEach( categoria => { %>
+  <blockquote class="blockquote">
+    <p class="mb-0">
+      <%- categoria.categoria %>
+    </p>
+    <% categoria.vagas.forEach(vaga => { %>
+    <footer class="blockquote-footer">
+      <a class="text-dark" href="/vagas/<%- vaga.id %>">
+        <%- vaga.titulo %>
+      </a>
+    </footer>
+    <% }) %>
+  </blockquote>
+  <% }) %>
+</div>
+
+<%- include('footer')%>

@@ -1,0 +1,16 @@
+<%- include('header')%>
+
+<div class="container">
+  <h4 class="lead display-4">Gerenciar Vagas <span><a href="/admin/vagas/nova">Nova vaga</a></h4>
+  <blockquote class="blockquote">
+    <% vagas.forEach(vaga => { %>
+    <footer class="blockquote-footer">
+      <%- vaga.titulo %> |
+      <a class="text-dark" href="/admin/vagas/delete/<%- vaga.id %>">Deletar</a>
+      <a class="text-dark" href="/admin/vagas/update/<%- vaga.id %>">Atualizar</a>
+    </footer>
+    <% }) %>
+  </blockquote>
+</div>
+
+<%- include('footer')%>

@@ -1,0 +1,19 @@
+<%- include('header')%>
+
+<div class="container">
+  <p class="title">Informações sobre a vaga</p>
+
+  <blockquote class="blockquote">
+    <p>Cargo:</p>
+    <footer class="blockquote-footer">
+      <%- vaga.titulo %>
+    </footer>
+    <span>
+      <p>Descrição:</p>
+      <%- vaga.descricao %>
+    </span>
+  </blockquote>
+
+  <a href="/">Voltar</a>
+
+  <%- include('footer')%>

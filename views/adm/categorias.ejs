@@ -1,0 +1,17 @@
+<%- include('header')%>
+
+<div class="container">
+  <h4 class="lead display-4">Gerenciar Categorias <span><a href="/admin/categorias/nova">Nova egoria</a></h4>
+  </h4>
+  <blockquote class="blockquote">
+    <% categorias.forEach(categoria => { %>
+    <footer class="blockquote-footer">
+      (<%- categoria.id %>) - <%- categoria.categoria %> |
+      <a class="text-dark" href="/admin/categorias/delete/<%- categoria.id %>">Deletar</a>
+      <a class="text-dark" href="/admin/categorias/update/<%- categoria.id %>">Atualizar</a>
+    </footer>
+    <% }) %>
+  </blockquote>
+</div>
+
+<%- include('footer')%>
