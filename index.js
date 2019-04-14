@@ -22,17 +22,6 @@ const init = async () => {
   await db.run(
     `CREATE TABLE IF NOT EXISTS categoria (id INTEGER PRIMARY KEY, categoria TEXT);`
   );
-  await db.run(`INSERT INTO categoria (categoria) VALUES ('${categoria}');`);
-
-  let titulo = "Social Media (Pereiro-CE)";
-  let descricao =
-    "Mussum Ipsum, cacilds vidis litro abertis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Cevadis im ampola pa arma uma pindureta. Não sou faixa preta cumpadi.Praesent malesuada urna nisi.Nam vulputate dapibus.quis volutpat erat hendrerit non.inteiris.";
-  await db.run(
-    `CREATE TABLE IF NOT EXISTS vaga (id INTEGER PRIMARY KEY, titulo TEXT, descricao TEXT, categoria INTEGER);`
-  );
-  await db.run(
-    `INSERT INTO vaga (titulo, descricao, categoria) VALUES ('${titulo}', '${descricao}', 1);`
-  );
 };
 
 //init();
