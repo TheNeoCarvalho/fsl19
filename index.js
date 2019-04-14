@@ -18,13 +18,15 @@ app.use(
 
 const init = async () => {
   const db = await dbConnection;
-  let categoria = "Marketing Team";
   await db.run(
     `CREATE TABLE IF NOT EXISTS categoria (id INTEGER PRIMARY KEY, categoria TEXT);`
   );
+  await db.run(
+    `CREATE TABLE IF NOT EXISTS vaga (id INTEGER PRIMARY KEY, titulo TEXT, descricao TEXT, categoria INTEGER);`
+  );
 };
 
-//init();
+init();
 
 app.get("/", async (req, res) => {
   const db = await dbConnection;
