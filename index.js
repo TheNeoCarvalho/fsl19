@@ -9,6 +9,8 @@ const dbConnection = sqlite.open("banco.sqlite", {
   Promise
 });
 
+const port = process.env.PORT || 3000;
+
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
@@ -37,21 +39,6 @@ app.get("/", async (req, res) => {
     alunos,
     empresas
   });
-});
-
-app.get("/login", (req, res) => {
-  res.render("login");
-});
-
-app.post("/login", (req, res) => {
-  let { user, pass } = req.body;
-  if (user === "neo" && pass === "qwert") {
-    jwt.sign(user, "secretkey", (err, token) => {
-      console.log(JSON.stringify(token));
-    });
-  } else {
-    console.log("Erro ao logar");
-  }
 });
 
 app.get("/vagas", (req, res) => {
@@ -182,12 +169,12 @@ const init = async () => {
   await db.run(
     `CREATE TABLE IF NOT EXISTS vaga (id INTEGER PRIMARY KEY, titulo TEXT, descricao TEXT, categoria INTEGER);`
   );
-  await db.run(
-    `CREATE TABLE IF NOT EXISTS alunos (id INTEGER PRIMARY KEY, nome TEXT, curso TEXT);`
-  );
-  await db.run(
-    `CREATE TABLE IF NOT EXISTS empresas (id INTEGER PRIMARY KEY, nome TEXT);`
-  );
+  // await db.run(
+  //   `CREATE TABLE IF NOT EXISTS alunos (id INTEGER PRIMARY KEY, nome TEXT, curso TEXT);`
+  // );
+  // await db.run(
+  //   `CREATE TABLE IF NOT EXISTS empresas (id INTEGER PRIMARY KEY, nome TEXT);`
+  // );
 
   //await db.run(
   //   `INSERT INTO alunos (nome, curso) VALUES ('Henri Enrique Pinheiro', 'Informática');`
@@ -198,6 +185,6 @@ const init = async () => {
 
 init();
 
-app.listen(3000, () => {
-  console.log("Server is On");
+app.listen(port, () => {
+  console.log("Server is Up in port ");
 });
