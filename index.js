@@ -148,7 +148,6 @@ app.get("/admin/categorias/update/:id", async (req, res) => {
 
 app.post("/admin/categorias/update/:id", async (req, res) => {
   let { id, categoria } = req.body;
-  let idUrl = req.params.id;
   const db = await dbConnection;
   await db.run(
     `UPDATE categoria SET categoria = '${categoria}' WHERE id = ${id};`
