@@ -6,7 +6,7 @@
 
 # Deploy
 ### zeit.co
-#### https://fsl19-lelzakdgdy.now.sh
+#### https://fsl-nwwyordbjh.now.sh/
 
 # Como usar?
 ### Clonar o repositório
