@@ -1,17 +1,32 @@
-<%- include('header')%>
+<%- include('partials/header')%>
 
 <div class="container">
-  <h4 class="lead display-4">Gerenciar Categorias <span><a href="/admin/categorias/nova">Nova egoria</a></h4>
+  <h4 class="lead display-4">Gerenciar Categorias <span>
+    <a class="btn btn-dark" href="/admin/categorias/nova">
+      <i style="color: #fff" class="fas fa-plus-circle"></i> Nova categoria</a>
   </h4>
-  <blockquote class="blockquote">
-    <% categorias.forEach(categoria => { %>
-    <footer class="blockquote-footer">
-      (<%- categoria.id %>) - <%- categoria.categoria %> |
-      <a class="text-dark" href="/admin/categorias/delete/<%- categoria.id %>">Deletar</a>
-      <a class="text-dark" href="/admin/categorias/update/<%- categoria.id %>">Atualizar</a>
-    </footer>
-    <% }) %>
-  </blockquote>
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Categorias</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% categorias.forEach(cat => { %>  
+        <tr>
+          <th scope="row"><%- cat.id %></th>
+          <td><%- cat.categoria %></td>
+          <td>
+              <a class="text-dark" href="/admin/vagas/delete/<%- cat.id %>"> <i class="fas fa-trash-alt"></i></a> | 
+              <a class="text-dark" href="/admin/vagas/update/<%- cat.id %>"> <i class="fas fa-edit"></i></a>
+          </td>
+
+        </tr>
+      <% }) %>
+      </tbody>
+    </table>
 </div>
 
-<%- include('footer')%>
+<%- include('partials/footer')%>

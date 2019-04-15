@@ -1,16 +1,32 @@
-<%- include('header')%>
+<%- include('partials/header')%>
 
 <div class="container">
-  <h4 class="lead display-4">Gerenciar Vagas <span><a href="/admin/vagas/nova">Nova vaga</a></h4>
-  <blockquote class="blockquote">
-    <% vagas.forEach(vaga => { %>
-    <footer class="blockquote-footer">
-      <%- vaga.titulo %> |
-      <a class="text-dark" href="/admin/vagas/delete/<%- vaga.id %>">Deletar</a>
-      <a class="text-dark" href="/admin/vagas/update/<%- vaga.id %>">Atualizar</a>
-    </footer>
-    <% }) %>
-  </blockquote>
+  <h4 class="lead display-4">Gerenciar Vagas <span>
+    <a class="btn btn-dark" href="/admin/vagas/nova">
+      <i style="color: #fff" class="fas fa-plus-circle"></i> Nova vaga
+    </a></h4>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Vagas</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% vagas.forEach(vaga => { %>  
+          <tr>
+            <th scope="row"><%- vaga.id %></th>
+            <td><%- vaga.titulo %></td>
+            <td>
+                <a class="text-dark" href="/admin/vagas/delete/<%- vaga.id %>"> <i class="fas fa-trash-alt"></i></a> | 
+                <a class="text-dark" href="/admin/vagas/update/<%- vaga.id %>"> <i class="fas fa-edit"></i></a>
+            </td>
+
+          </tr>
+        <% }) %>
+        </tbody>
+      </table>
 </div>
 
-<%- include('footer')%>
+<%- include('partials/footer')%>

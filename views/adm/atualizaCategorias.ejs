@@ -1,15 +1,20 @@
-<%- include('header')%>
+<%- include('partials/header')%>
 
 <div class="container">
   <form method="post">
     <div class="form-group">
       <label for="exampleInputEmail1">Título da vaga</label>
-      <input value="<%- categoria.id%>" type="hidden">
-      <input value="<%- categoria.categoria%>" type="text" name="categoria" class="form-control"
-        aria-describedby="emailHelp">
+      <input value="<%- categoria.id%>" type="hidden" />
+      <input
+        value="<%- categoria.categoria%>"
+        type="text"
+        name="categoria"
+        class="form-control"
+        aria-describedby="emailHelp"
+      />
     </div>
     <button class="btn btn-dark mb-2">Salvar Vaga</button>
   </form>
 </div>
 
-<%- include('footer')%>
+<%- include('partials/footer')%>
