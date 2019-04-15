@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const sqlite = require("sqlite");
 
+var jwt = require("jsonwebtoken");
+
 const app = express();
 const dbConnection = sqlite.open("banco.sqlite", {
   Promise
@@ -35,6 +37,21 @@ app.get("/", async (req, res) => {
     alunos,
     empresas
   });
+});
+
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+app.post("/login", (req, res) => {
+  let { user, pass } = req.body;
+  if (user === "neo" && pass === "qwert") {
+    jwt.sign(user, "secretkey", (err, token) => {
+      console.log(JSON.stringify(token));
+    });
+  } else {
+    console.log("Erro ao logar");
+  }
 });
 
 app.get("/vagas", (req, res) => {
