@@ -25,9 +25,6 @@ app.get("/", async (req, res) => {
   const categoriasDb = await db.all("SELECT * FROM categoria");
   const vagas = await db.all("SELECT * FROM vaga");
 
-  const alunos = await db.all("SELECT * FROM alunos");
-  const empresas = await db.all("SELECT * FROM empresas");
-
   const categorias = categoriasDb.map(cat => {
     return {
       ...cat,
@@ -35,9 +32,7 @@ app.get("/", async (req, res) => {
     };
   });
   res.render("home", {
-    categorias,
-    alunos,
-    empresas
+    categorias
   });
 });
 
