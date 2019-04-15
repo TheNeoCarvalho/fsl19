@@ -172,14 +172,14 @@ const init = async () => {
     `CREATE TABLE IF NOT EXISTS empresas (id INTEGER PRIMARY KEY, nome TEXT);`
   );
 
-  // await db.run(
+  //await db.run(
   //   `INSERT INTO alunos (nome, curso) VALUES ('Henri Enrique Pinheiro', 'Informática');`
   // );
 
   // await db.run(`INSERT INTO empresas (nome) VALUES ('W&C Digital');`);
 };
 
-//init();
+init();
 
 app.listen(3000, () => {
   console.log("Server is On");
