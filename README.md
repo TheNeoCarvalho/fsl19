@@ -6,7 +6,8 @@
 
 # Deploy
 ### zeit.co
-#### https://fsl-nwwyordbjh.now.sh/
+#### https://jobify.now.sh/
+#### https://jobify.now.sh/admin
 
 # Como usar?
 ### Clonar o repositório
